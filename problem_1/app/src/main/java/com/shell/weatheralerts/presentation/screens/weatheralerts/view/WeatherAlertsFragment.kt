@@ -64,12 +64,6 @@ class WeatherAlertsFragment : Fragment(R.layout.fragment_wheater_alerts) {
                 itemAnimator = null
                 adapter = weatherAlertAdapter
             }
-
-            root.applyInsetter {
-                type(navigationBars = true, statusBars = true) {
-                    padding()
-                }
-            }
         }
     }
 
