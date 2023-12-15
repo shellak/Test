@@ -53,6 +53,12 @@ class WeatherAlertsFragment : Fragment(R.layout.fragment_wheater_alerts) {
 
     private fun initViews() {
         with(binding) {
+            root.applyInsetter {
+                type(navigationBars = true, statusBars = true) {
+                    padding()
+                }
+            }
+
             weatherAlertAdapter = WeatherAlertAdapter(loadWeatherAlertImage = viewModel::loadWeatherAlertImage)
             with(alerts) {
                 itemAnimator = null
