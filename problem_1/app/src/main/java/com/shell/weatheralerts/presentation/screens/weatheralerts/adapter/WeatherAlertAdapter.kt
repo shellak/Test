@@ -7,11 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.shell.weatheralerts.databinding.ItemWeatherAlertBinding
 import com.shell.weatheralerts.presentation.screens.weatheralerts.model.WeatherAlertUi
-import com.shell.weatheralerts.utils.extensions.dpToPx
 import com.shell.weatheralerts.utils.extensions.getCircularProgressDrawable
-import com.shell.weatheralerts.utils.extensions.getRoundedBitmapDrawable
-
-private const val CORNER_RADIUS = 8
 
 class WeatherAlertAdapter(
     private val loadWeatherAlertImage: (String) -> Unit
@@ -49,15 +45,9 @@ class WeatherAlertAdapter(
                 ends.text = weatherAlertUi.ends
                 duration.text = weatherAlertUi.duration
                 senderName.text = weatherAlertUi.senderName
-                image.setImageBitmap(weatherAlertUi.image)
 
-                weatherAlertUi.image?.let { bitmap ->
-                    image.setImageDrawable(
-                        bitmap.getRoundedBitmapDrawable(
-                            resources = binding.root.context.resources,
-                            radius = CORNER_RADIUS.dpToPx,
-                        )
-                    )
+                weatherAlertUi.image?.let {
+                    image.setImageBitmap(it)
                 } ?: run {
                     image.setImageDrawable(
                         binding.root.context.getCircularProgressDrawable()

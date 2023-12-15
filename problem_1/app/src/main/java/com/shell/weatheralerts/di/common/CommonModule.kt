@@ -1,11 +1,11 @@
-package com.shell.weatheralerts.di.network
+package com.shell.weatheralerts.di.common
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.shell.weatheralerts.BuildConfig
 import com.shell.weatheralerts.utils.cache.Cache
 import com.shell.weatheralerts.utils.cache.CacheImpl
-import com.shell.weatheralerts.utils.date.DateFormats
+import com.shell.weatheralerts.utils.date.DateUtils
 import com.shell.weatheralerts.utils.serialization.LocalDateTimeTypeAdapter
 import dagger.Module
 import dagger.Provides
@@ -41,7 +41,7 @@ class CommonModule {
     @Singleton
     @Provides
     fun provideGson(): Gson {
-        val dateFormat = DateTimeFormatter.ofPattern(DateFormats.DEFAULT_DATE_TIME_PATTERN)
+        val dateFormat = DateTimeFormatter.ofPattern(DateUtils.DEFAULT_DATE_TIME_PATTERN)
         return GsonBuilder()
             .registerTypeAdapter(LocalDateTime::class.java, LocalDateTimeTypeAdapter(dateFormat))
             .create()
