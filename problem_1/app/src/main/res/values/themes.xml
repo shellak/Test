@@ -1,0 +1,18 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WeatherAlerts" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/blue_500</item>
+        <item name="colorPrimaryVariant">@color/blue_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >@color/black_alpha_15</item>
+
+        <item name="android:textViewStyle">@style/Text</item>
+    </style>
+
+    <style name="Theme.WeatherAlerts" parent="Base.Theme.WeatherAlerts" />
+
+</resources>

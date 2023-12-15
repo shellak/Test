@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Weather Alerts</string>
+    <string name="event">event:</string>
+    <string name="effective">effective:</string>
+    <string name="ends">ends:</string>
+    <string name="sender_name">senderName:</string>
+    <string name="duration">duration:</string>
+
+</resources>

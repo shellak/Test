@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.screens.main.view.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/margin_default_smaller"
+        android:layout_marginStart="@dimen/margin_default_smaller"
+        android:background="@drawable/bg_rounded_corners"
+        android:elevation="@dimen/elevation"
+        android:padding="@dimen/margin_default">
+
+        <TextView
+            android:id="@+id/event_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/event"
+            app:layout_constraintBottom_toTopOf="@id/effective_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/image"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/event"
+            style="@style/Text.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default_smallest"
+            android:layout_marginEnd="@dimen/margin_default_smallest"
+            app:layout_constraintBottom_toBottomOf="@id/event_label"
+            app:layout_constraintEnd_toStartOf="@id/image"
+            app:layout_constraintStart_toEndOf="@id/barrier"
+            app:layout_constraintTop_toTopOf="@id/event_label"
+            tools:text="Flood Watch" />
+
+        <TextView
+            android:id="@+id/effective_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_smallest"
+            android:text="@string/effective"
+            app:layout_constraintBottom_toTopOf="@id/ends_label"
+            app:layout_constraintStart_toStartOf="@id/event_label"
+            app:layout_constraintTop_toBottomOf="@id/event_label" />
+
+        <TextView
+            android:id="@+id/effective"
+            style="@style/Text.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_default_smallest"
+            app:layout_constraintBottom_toBottomOf="@id/effective_label"
+            app:layout_constraintEnd_toStartOf="@id/image"
+            app:layout_constraintStart_toStartOf="@id/event"
+            app:layout_constraintTop_toTopOf="@id/effective_label"
+            tools:text="2023-12-12 11:11" />
+
+        <TextView
+            android:id="@+id/ends_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_smallest"
+            android:text="@string/ends"
+            app:layout_constraintBottom_toTopOf="@id/duration_label"
+            app:layout_constraintStart_toStartOf="@id/effective_label"
+            app:layout_constraintTop_toBottomOf="@id/effective_label" />
+
+        <TextView
+            android:id="@+id/ends"
+            style="@style/Text.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_default_smallest"
+            app:layout_constraintBottom_toBottomOf="@id/ends_label"
+            app:layout_constraintEnd_toStartOf="@id/image"
+            app:layout_constraintStart_toStartOf="@id/effective"
+            app:layout_constraintTop_toTopOf="@id/ends_label"
+            tools:text="2023-12-12 11:11" />
+
+        <TextView
+            android:id="@+id/duration_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_smallest"
+            android:text="@string/duration"
+            app:layout_constraintBottom_toTopOf="@id/sender_name_label"
+            app:layout_constraintStart_toStartOf="@id/ends_label"
+            app:layout_constraintTop_toBottomOf="@id/ends_label" />
+
+        <TextView
+            android:id="@+id/duration"
+            style="@style/Text.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_default_smallest"
+            app:layout_constraintBottom_toBottomOf="@id/duration_label"
+            app:layout_constraintEnd_toStartOf="@id/image"
+            app:layout_constraintStart_toStartOf="@id/ends"
+            app:layout_constraintTop_toTopOf="@id/duration_label"
+            tools:text="26:12" />
+
+        <TextView
+            android:id="@+id/sender_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_smallest"
+            android:text="@string/sender_name"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            app:layout_constraintStart_toStartOf="@id/duration_label"
+            app:layout_constraintTop_toBottomOf="@id/duration_label" />
+
+        <TextView
+            android:id="@+id/sender_name"
+            style="@style/Text.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_default_smallest"
+            app:layout_constraintBottom_toBottomOf="@id/sender_name_label"
+            app:layout_constraintEnd_toStartOf="@id/image"
+            app:layout_constraintStart_toStartOf="@id/duration"
+            app:layout_constraintTop_toTopOf="@id/sender_name_label"
+            tools:text="NWS Honolulu" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="event_label, effective_label, ends_label, duration_label, sender_name_label" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:layout_marginTop="@dimen/margin_default_smallest"
+            android:layout_marginEnd="@dimen/margin_default_smallest"
+            android:layout_marginBottom="@dimen/margin_default_smallest"
+            android:background="@drawable/bg_rounded_corners"
+            android:elevation="@dimen/elevation"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
