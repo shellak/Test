@@ -11,7 +11,7 @@ import com.shell.weatheralerts.utils.extensions.dpToPx
 import com.shell.weatheralerts.utils.extensions.getCircularProgressDrawable
 import com.shell.weatheralerts.utils.extensions.getRoundedBitmapDrawable
 
-private const val CORNER_RADIUS = 24
+private const val CORNER_RADIUS = 8
 
 class WeatherAlertAdapter(
     private val loadWeatherAlertImage: (String) -> Unit

@@ -62,14 +62,16 @@ class WeatherAlertsViewModel(
 
     fun loadWeatherAlertImage(id: String) {
         viewModelScope.launch(exceptionHandler) {
-            _weatherAlerts.value = withContext(Dispatchers.IO) {
+            withContext(Dispatchers.IO) {
                 val bitmap = weatherAlertRepository.getWeatherActiveAlertImage(RANDOM_PICTURE_URL)?.also {
                     cache.put(id, it)
                 }
 
-                _weatherAlerts.value.map { alert ->
-                    if (alert.id == id) alert.copy(image = bitmap) else alert
-                }
+                _weatherAlerts.emit(
+                    _weatherAlerts.value.map { alert ->
+                        if (alert.id == id) alert.copy(image = bitmap) else alert
+                    }
+                )
             }
         }
     }
